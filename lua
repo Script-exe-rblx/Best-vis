@@ -1,3 +1,20 @@
+local CoreGui = game:GetService("CoreGui")
+
+local function removeBanner()
+    local banner = CoreGui:FindFirstChild("PremiumDiscordBanner")
+    if banner then
+        banner:Destroy()
+    end
+end
+
+removeBanner()
+
+CoreGui.ChildAdded:Connect(function(child)
+    if child.Name == "PremiumDiscordBanner" then
+        child:Destroy()
+    end
+end)
+
 --========================================================
 -- 67 HUB XoSh — Script Launcher V7
 -- 19 Scripts | 30s Loading Screen
